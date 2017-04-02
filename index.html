@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Title</title>
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,800" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+</head>
+<body>
+
+    <section class="todo">
+        <header class="todo__header todo__section">
+            <h1><label for="task-input" class="form-label">Add Task</label></h1>
+            <input id="task-input" type="text" class="form-control"  placeholder="Type your task and press <Enter>">
+        </header>
+
+        <ul id="tasks" class="todo__tasks-list">
+        </ul>
+
+        <footer class="todo__footer">
+            <dl class="todo__section">
+                <dt>Всего задач:</dt>
+                <dd id="total-tasks">0</dd>
+            </dl>
+            <div class="todo__section">
+                <button id="delete-completed">Удалить завершенные</button>
+            </div>
+        </footer>
+    </section>
+
+</body>
+</html>

@@ -1,0 +1,151 @@
+html {
+  background: #fff;
+  font-size: 16px;
+  padding: 1em;
+}
+
+body {
+  background-color: white;
+  font-family: 'Fira Sans Condensed', sanserif;
+  font-weight: 400;
+  line-height: 1.45;
+  color: #333;
+}
+
+p {
+  margin-bottom: 1.3em;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 1.414em 0 0.5em;
+  font-family: 'Fira Sans Condensed', sanserif;
+  font-weight: inherit;
+  line-height: 1.2;
+}
+
+h1 {
+  margin-top: 0;
+  font-size: 3.157em;
+}
+
+.todo {
+  width: 80vw;
+  min-width: 400px;
+  margin: 0 auto;
+}
+
+.todo__section {
+  display: flex;
+}
+
+.todo__header {
+  flex-direction: column;
+  padding: 1.2rem 3.6rem;
+  background-color: #f0f0f0;
+  border-bottom: solid 2px #ccc;
+  font-weight: 800;
+}
+
+input[type='text'] {
+  padding: 1em;
+}
+
+input[type='text']::placeholder {
+  opacity: 1;
+  transition: opacity 0.3s ease;
+  color: #bbb;
+}
+
+input[type='text']:focus::placeholder {
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.todo__tasks-list {
+  font-size: 1.2em;
+
+}
+
+.todo__tasks-list li:nth-child(even) {
+  background-color: #f6f6f6;
+}
+
+.todo__tasks-list li:hover {
+  background-color: #f1f1ff;
+  transition: background-color 0.3s ease;
+}
+
+.task-list__item {
+  display: flex;
+  line-height: 2.4;
+  justify-content: space-between;
+  padding-left: 3em;
+  cursor: pointer;
+  border-bottom: solid 1px #ccc;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.task-list__item.completed {
+  color: #c0c0c0;
+}
+
+.task-list__item.completed::before {
+  width: 0.6rem;
+  height: 1.2rem;
+  content: '';
+  position: absolute;
+  border: solid #bbb;
+  border-width: 0 2px 2px 0;
+  transform: translate(-2.4rem, 50%) rotate(45deg);
+}
+
+.delete:hover {
+  background-color: #ffd9d9;
+  transition: background-color 0.3s ease;
+}
+
+.delete {
+  align-self: flex-end;
+  text-align: center;
+  width: 2.4em;
+  user-select: none;
+  transition: background-color 0.3s ease;
+}
+
+.form-control {
+  border: 1px solid #ccc;
+  font-size: 1em;
+}
+
+.todo__footer {
+  display: flex;
+  padding-top: 0.6rem;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.todo__footer > .todo__section {
+  display: inline-flex;
+}
+
+.todo__footer dt {
+  margin-right: 0.25em;
+}
+
+.todo__footer dd {
+  margin-right: 1.25em;
+  font-weight: 800;
+}
+
+button {
+  font-size: inherit;
+  padding: 0.6em 1.2em;
+}
+
+.error {
+  border-left: 4px solid red;
+}
