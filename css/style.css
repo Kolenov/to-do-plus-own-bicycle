@@ -123,6 +123,7 @@ input[type='text']:focus::placeholder {
 }
 
 .todo__footer {
+  user-select: none;
   display: flex;
   padding-top: 0.6rem;
   justify-content: space-between;
