@@ -29,7 +29,6 @@ window.addEventListener('load', function() {
       deleteCompleted = document.getElementById('delete-completed');
 
   /**
-   * ajaxJSON
    * @param method
    * @param url
    * @param onSuccess
