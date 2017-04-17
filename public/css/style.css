@@ -49,8 +49,17 @@ h1 {
   font-weight: 800;
 }
 
-input[type='text'] {
-  padding: 1em;
+.form-control {
+  padding: .5rem .75rem;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #464a4c;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid rgba(0, 0, 0, .15);
+  border-radius: .25rem;
+  transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
 }
 
 input[type='text']::placeholder {
@@ -64,13 +73,19 @@ input[type='text']:focus::placeholder {
   transition: opacity 0.3s ease;
 }
 
-.todo__tasks-list {
-  font-size: 1.2em;
-
+input[type='button'] {
+  font-size: inherit;
+  padding: 0.6em 1.2em;
 }
 
-.todo__tasks-list li:nth-child(even) {
-  background-color: #f6f6f6;
+input[type='checkbox'] {
+  width: 1.2em;
+  height: 1.2em;
+  margin-right: 1.2em;
+}
+
+.todo__tasks-list {
+  font-size: 1.2em;
 }
 
 .todo__tasks-list li:hover {
@@ -80,27 +95,24 @@ input[type='text']:focus::placeholder {
 
 .task-list__item {
   display: flex;
-  line-height: 2.4;
+  line-height: 2;
   justify-content: space-between;
   padding-left: 3em;
   cursor: pointer;
+  user-select: none;
   border-bottom: solid 1px #ccc;
   background-color: #fff;
   transition: background-color 0.3s ease;
 }
 
-.task-list__item.completed {
-  color: #c0c0c0;
+.task-list__item-title {
+  display: flex;
+  align-items: center;
 }
 
-.task-list__item.completed::before {
-  width: 0.6rem;
-  height: 1.2rem;
-  content: '';
-  position: absolute;
-  border: solid #bbb;
-  border-width: 0 2px 2px 0;
-  transform: translate(-2.4rem, 50%) rotate(45deg);
+.task-list__item-title.completed {
+  color: #c0c0c0;
+  text-decoration: line-through;
 }
 
 .delete:hover {
@@ -109,16 +121,12 @@ input[type='text']:focus::placeholder {
 }
 
 .delete {
+  font-size: 1.2em;
   align-self: flex-end;
   text-align: center;
   width: 2.4em;
   user-select: none;
   transition: background-color 0.3s ease;
-}
-
-.form-control {
-  border: 1px solid #ccc;
-  font-size: 1em;
 }
 
 .todo__footer {
@@ -139,13 +147,4 @@ input[type='text']:focus::placeholder {
 .todo__footer dd {
   margin-right: 1.25em;
   font-weight: 800;
-}
-
-button {
-  font-size: inherit;
-  padding: 0.6em 1.2em;
-}
-
-.error {
-  border-left: 4px solid red;
 }

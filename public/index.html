@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Title</title>
+    <title>To-Do list</title>
     <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:400,800" rel="stylesheet">
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="js/main.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
 </head>
 <body>
 
     <section class="todo">
         <header class="todo__header todo__section">
-            <h1><label for="task-input" class="form-label">Add Task</label></h1>
-            <input id="task-input" type="text" class="form-control"  placeholder="Type your task and press <Enter>">
+            <h1><label for="task-title" class="form-label">Add Task</label></h1>
+            <input id="task-title" type="text" class="form-control"  placeholder="Type your task and press <Enter>">
         </header>
 
         <ul id="tasks" class="todo__tasks-list">
@@ -27,7 +27,7 @@
                 <dd id="total-tasks">0</dd>
             </dl>
             <div class="todo__section">
-                <button id="delete-completed">Удалить завершенные</button>
+                <input type="button" id="delete-completed" value="Удалить завершенные">
             </div>
         </footer>
     </section>
