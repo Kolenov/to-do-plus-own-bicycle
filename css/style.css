@@ -79,6 +79,7 @@ input[type='text']:focus::placeholder {
 }
 
 .task-list__item {
+  user-select: none;
   display: flex;
   line-height: 2.4;
   justify-content: space-between;
