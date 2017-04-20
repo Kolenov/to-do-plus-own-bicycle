@@ -63,10 +63,10 @@ window.addEventListener('load', function() {
   ajaxJSON('GET', url, function(data) {
         var fragment = document.createDocumentFragment();
 
-        data.reduce(function(pv, cv) {
-          fragment.appendChild(render(cv));
+        data.forEach(function(el) {
+          fragment.appendChild(render(el));
           counter.increase();
-        }, fragment);
+        });
 
         tasksList.appendChild(fragment);
         totalTasks.innerHTML = counter.total;
@@ -78,8 +78,7 @@ window.addEventListener('load', function() {
   // add task
   taskTitle.addEventListener('keyup', function(event) {
     if (event.keyCode === KEY_CODE.ENTER) {
-      var that = this,
-          content = this.value.trim();
+      var content = this.value.trim();
 
       if (!content) {
         return;
@@ -90,8 +89,8 @@ window.addEventListener('load', function() {
             tasksList.appendChild(render(data));
             counter.increase();
             totalTasks.innerHTML = counter.total;
-            that.value = '';
-          },
+            this.value = '';
+          }.bind(this),
           function(status) {
             console.log(status);
           },
@@ -115,9 +114,11 @@ window.addEventListener('load', function() {
             tasksList.removeChild(taskToDel);
             counter.decrease();
             totalTasks.innerHTML = counter.total;
-          }, function(status) {
+          },
+          function(status) {
             console.log(status);
-          }, JSON.stringify(idToDel));
+          },
+          JSON.stringify(idToDel));
     }
 
     // update task
@@ -136,7 +137,8 @@ window.addEventListener('load', function() {
           },
           function(status) {
             console.log(status);
-          }, JSON.stringify(obj));
+          },
+          JSON.stringify(obj));
 
     }
   });
@@ -144,6 +146,7 @@ window.addEventListener('load', function() {
   deleteCompleted.addEventListener('click', function(e) {
     var completed = tasksList.querySelectorAll('.completed'),
         completedID = [];
+
     console.log(completed);
 
     completed.forEach(function(element) {
@@ -160,9 +163,11 @@ window.addEventListener('load', function() {
             counter.decrease();
           });
           totalTasks.innerHTML = counter.total;
-        }, function(status) {
+        },
+        function(status) {
           console.log(status);
-        }, JSON.stringify(completedID));
+        },
+        JSON.stringify(completedID));
 
   });
 
